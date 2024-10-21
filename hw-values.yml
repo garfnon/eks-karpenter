@@ -1,0 +1,11 @@
+ingress:
+  enabled: true
+  tls:
+  - secretName: wildcard-secret
+    hosts:
+      - helloworld.<domain>
+  hosts:
+  - host: helloworld.<domain>
+    paths:
+      - path: /
+

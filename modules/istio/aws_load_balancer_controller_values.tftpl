@@ -1,0 +1,8 @@
+vpcId: ${vpc_id}
+replicaCount: ${replica_count}
+tolerations:
+- key: "CriticalAddonsOnly"
+  value: "true"
+  effect: "NoSchedule"
+nodeSelector:
+  nodeType: "admin"

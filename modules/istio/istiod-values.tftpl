@@ -1,0 +1,9 @@
+meshConfig:
+  accessLogFile: "/dev/stdout"
+pilot:
+  nodeSelector: 
+    nodeType: admin
+  tolerations:
+  - key: "CriticalAddonsOnly"
+    value: "true"
+    effect: "NoSchedule"

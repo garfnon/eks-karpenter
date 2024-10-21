@@ -1,0 +1,34 @@
+crds:
+  enabled: true
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: ${role_arn}
+securityContext:
+  fsGroup: 1001
+tolerations:
+- key: "CriticalAddonsOnly"
+  value: "true"
+  effect: "NoSchedule"
+nodeSelector:
+  nodeType: admin
+cainjector:
+  tolerations:
+  - key: "CriticalAddonsOnly"
+    value: "true"
+    effect: "NoSchedule"
+  nodeSelector:
+    nodeType: admin
+webhook:
+  tolerations:
+  - key: "CriticalAddonsOnly"
+    value: "true"
+    effect: "NoSchedule"
+  nodeSelector:
+    nodeType: admin
+startupapicheck:
+  tolerations:
+  - key: "CriticalAddonsOnly"
+    value: "true"
+    effect: "NoSchedule"
+  nodeSelector:
+    nodeType: admin
